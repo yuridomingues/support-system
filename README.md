@@ -1,64 +1,72 @@
-# Support System Interface (Frontend)
+# Support System
 
-This is the frontend for the technical support system. The application allows you to register and manage **Clients** and **Support Tickets**, with an intuitive web interface, secure authentication, and integration with an API developed in FastAPI.
+Frontend do **Support System**, um projeto full-stack para gerenciamento de clientes e chamados de suporte.
 
----
+O produto foi desenvolvido em dois repositórios:
 
-## Features
+- Frontend: este repositório
+- Backend: https://github.com/yuridomingues/support-system-api
 
-- JWT authentication
-- Protected routes (PrivateRoute)
-- Client CRUD
-- CRUD for Tickets associated with clients
-- Fixed navbar with logout and quick navigation
-- Error message display in the interface
-- Integration with the API using Axios
-- Docker and Makefile for easy execution
+No portfólio, os dois devem ser considerados um único projeto.
 
----
+## Funcionalidades
 
-## Technologies Used
+- autenticação JWT;
+- rotas protegidas;
+- cadastro e gerenciamento de clientes;
+- CRUD de tickets vinculados a clientes;
+- tratamento de erros na interface;
+- integração com a API via Axios;
+- execução local com Vite ou Docker.
 
-- [React.js](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [React Router DOM](https://reactrouter.com/)
-- [Axios](https://axios-http.com/)
-- [Docker](https://www.docker.com/)
-- Context API for authentication
+## Stack
 
----
+- React
+- Vite
+- React Router
+- Axios
+- Context API
+- Docker
 
-## How to run locally
+## Rodando localmente
 
-### Prerequisites
-
-- Node.js 18
-- NPM
-- Docker (optional, recommended)
-
----
-
-### Running with Vite (development mode)
+### Vite
 
 ```bash
-git clone https://github.com/your-username/support-system-interface.git
+git clone https://github.com/yuridomingues/support-system-interface.git
 cd support-system-interface
 npm install
 npm run dev
 ```
-Open in your browser: [http://localhost:5173](http://localhost:5173)
 
----
+A aplicação fica disponível em:
 
-### Running with Docker + Makefile
+```text
+http://localhost:5173
+```
+
+### Docker
 
 ```bash
 make run
-
 ```
-Open in your browser: [http://localhost:3000](http://localhost:3000)
 
----
+## Arquitetura do produto
 
-- URL  [`BACKEND`](https://github.com/yuridomingues/support-system-api)
+```text
+React / Vite
+     ↓
+   Axios
+     ↓
+FastAPI
+     ↓
+SQLAlchemy / Alembic
+     ↓
+PostgreSQL
+```
 
+Backend: https://github.com/yuridomingues/support-system-api
+
+## Próxima organização
+
+Frontend e backend pertencem ao mesmo produto. A direção recomendada é consolidá-los futuramente em um monorepo com `frontend/` e `backend/`, preservando o histórico dos dois repositórios atuais.
